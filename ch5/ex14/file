@@ -1,0 +1,12 @@
+Note that if you had written `-k 2' instead of `-k 2,2' `sort' would have used all characters beginning in the second field and extending to the end of the line as the primary _numeric_ key. 
+For the large majority of applications, treating keys spanning more than one field as numeric will not do what you expect.
+Also note that the `n' modifier was applied to the field-end specifier for the first key. 
+It would have been equivalent to specify `-k 2n,2' or `-k 2n,2n'.
+All modifiers except `b' apply to the associated _field_,
+regardless of whether the modifier character is attached to the field-start and/or the field-end part
+of the key specifier.
+Sort the password file on the fifth field and ignore any leading white space.
+Sort lines with equal values in field five on the numeric user ID in field three:
+$ sort -t : -k 5b,5 -k 3,3n /etc/passwd
+An alternative is to use the global numeric modifier `-n':
+$ sort -t : -n -k 5b,5 -k 3,3 /etc/passwd

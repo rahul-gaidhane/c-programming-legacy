@@ -1,0 +1,3 @@
+o In above output, we can see total arguments count is internally maintained by “argc” parameter of main() which holds value ‘7’
+(in which one argument is executable name and ‘6’ are arguments passed to program).And, all argument values are stored in “argv” parameter of main() which is arr
+ay of character strings. Here, main () function stores each argument value as character string. We can see, iterating over “argv” array, we can get all passed arguments in the program.
